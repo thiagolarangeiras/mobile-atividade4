@@ -7,11 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -82,12 +85,23 @@ fun TelaHome(
     btText1: String
 ){
     Column(
-        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement =  Arrangement.Top
+        verticalArrangement =  Arrangement.SpaceAround,
+        modifier = Modifier
+            .fillMaxSize(),
     ) {
-        Text(name, fontSize = 50.sp)
-        Text(content, fontSize = 25.sp)
+        Text(
+            name,
+            fontSize = 50.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(10.dp)
+        )
+        Text(
+            content,
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(10.dp)
+        )
         Button(
             onClick = btFun1
         ) {
@@ -99,9 +113,9 @@ fun TelaHome(
 @Composable
 fun TelaPista(name: String, pista: String, btFun1: ()-> Unit, btFun2: ()-> Unit){
     Column(
-        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement =  Arrangement.Top
+        verticalArrangement =  Arrangement.SpaceAround,
+        modifier = Modifier.fillMaxSize(),
     ) {
         Text(name, fontSize = 50.sp)
         Text(pista, fontSize = 25.sp)
